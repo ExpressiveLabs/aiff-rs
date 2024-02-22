@@ -138,7 +138,15 @@ impl<Source: Read + Seek> AiffReader<Source> {
                 [84, 65, 71, _] => println!("v1 id3"), // "TAG_"
                 [_, 84, 65, 71] => println!("v1 id3"), // "_TAG"
                 ids::CHAN | ids::BASC | ids::TRNS | ids::CATE => {
-                    unimplemented!("apple stuff detected")
+                    // unimplemented!("apple stuff detected")
+                    // let apple = chunks::AppleChunk::parse(&mut self.buf, id)
+                    //     .unwrap();
+                    // println!("APPLE chunk detected {:?}", apple);
+                    // form.add_apple_chunk(apple);
+
+                    // // TODO handle apple chunks
+                    
+                    // Ok(())
                 }
                 id => println!(
                     "other chunk {:?} {:?}",
